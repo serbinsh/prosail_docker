@@ -5,8 +5,9 @@ This repo is very much a WIP
 
 
 Initial run example
+Inputs and order:  N,Cab,Car,Anth,Cbrown,Cw,Cm,LIDFa,LIDFb,TypeLIDF,LAI,hspot,tts,tto,psi
 ```
-docker run -t -i -v ~/scratch:/output prosail:latest /bin/sh -c 'cd /output/ && /PROSAIL_D_FORTRAN/./prosail.exe 2 65 2 4 0 0.09 0.09 5 -0.35 -0.15 0.1'
+docker run -t -i -v ~/scratch:/output prosail:latest /bin/sh -c 'cd /output/ && /PROSAIL_D_FORTRAN/./prosail.exe 1.5 55 2 2 0 0.009 0.009 -0.35 -0.15 1 5 0.1 30 10 0'
 ```
 
 ```
