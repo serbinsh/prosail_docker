@@ -58,7 +58,7 @@ RUN apt-get update -y \
     libgsl0-dev \
     llvm \
     clang
-
+    
     ## Install program to configure locales
 RUN dpkg-reconfigure locales && \
   locale-gen C.UTF-8 && \
@@ -95,14 +95,19 @@ RUN cd / \
     && chmod 775 -R /PROSAIL_D_FORTRAN \
     && cd PROSAIL_D_FORTRAN \
     && rm main_PROSAIL.f90 \
-    && wget 
+    && wget https://raw.githubusercontent.com/serbinsh/prosail_docker/master/src/prosail_d/main_PROSAIL.f90 \
     && gfortran -o prosail.exe MODULE_PRO4SAIL.f90 dataSpec_PDB.f90 main_PROSAIL.f90 LIDF.f90 dladgen.f PRO4SAIL.f90 prospect_DB.f90 tav_abs.f90 volscatt.f90 \
-    && ./prosail.exe 2 65 2 4 0 0.09 0.09 5 -0.35 -0.15 0.1
+    && ./prosail.exe 1.5 55 2 2 0 0.009 0.009 -0.35 -0.15 1 5 0.1 30 10 0
 
 RUN cd / \
     && mkdir -p output \
     && chown prosail -R /output \
-    && chmod 775 -R /output
+    && chmod 775 -R /output \
+    && mkdir -p analysis_scripts \
+    && chown prosail -R /analysis_scripts \
+    && chmod 775 -R /analysis_scripts \
+    && cd /analysis_scripts \
+    && wget https://raw.githubusercontent.com/serbinsh/prosail_docker/master/analysis_scripts/simple_prosail_plot.R
 
 
 ### EOF
