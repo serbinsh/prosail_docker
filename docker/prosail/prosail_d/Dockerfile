@@ -94,6 +94,8 @@ RUN cd / \
     && chown prosail -R /PROSAIL_D_FORTRAN \
     && chmod 775 -R /PROSAIL_D_FORTRAN \
     && cd PROSAIL_D_FORTRAN \
+    && rm main_PROSAIL.f90 \
+    && wget 
     && gfortran -o prosail.exe MODULE_PRO4SAIL.f90 dataSpec_PDB.f90 main_PROSAIL.f90 LIDF.f90 dladgen.f PRO4SAIL.f90 prospect_DB.f90 tav_abs.f90 volscatt.f90 \
     && ./prosail.exe 2 65 2 4 0 0.09 0.09 5 -0.35 -0.15 0.1
 
