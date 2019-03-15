@@ -28,3 +28,11 @@ vi Refl_CAN_PDB.txt
  410  0.019033
  ...
  ```
+ 
+ Create a simple plot of the output:
+ 
+ ```
+docker run -t -i -v ~/scratch:/output prosail:latest /bin/sh -c 'cd /analysis_scripts/ && ./simple_prosail_plot.R ~/scratch/Refl_CAN_PDB.txt'
+```
+
+
