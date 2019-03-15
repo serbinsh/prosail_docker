@@ -19,8 +19,8 @@ for line in lines:
 f2.close() 
 
 plt.plot(x,y, label='PROSAIL-D')
-plt.xlabel('x')
-plt.ylabel('y')
+plt.xlabel('Wavelength (nm)')
+plt.ylabel('Reflectance (0-1')
 #plt.title('Interesting Graph\nCheck it out')
 plt.legend()
 #plt.show()
