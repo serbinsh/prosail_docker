@@ -35,4 +35,4 @@ vi Refl_CAN_PDB.txt
 docker run -t -i -v ~/scratch:/output prosail:latest /bin/sh -c 'cd /analysis_scripts/ && ./simple_prosail_plot.R ~/scratch/Refl_CAN_PDB.txt'
 ```
 
-
+![Alt text](graphics/PROSAIL_output.png?raw=true "Example PROSAIL-D Output")
