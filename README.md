@@ -1,6 +1,8 @@
 # PROSAIL Docker Repository
 A repository of Docker containers of the PROSPECT+SAIL family of models, sourced from http://teledetection.ipgp.jussieu.fr/prosail/
 
+Docker hub location: https://hub.docker.com/r/serbinsh/prosail_containers
+
 This repo is very much a WIP
 
 
