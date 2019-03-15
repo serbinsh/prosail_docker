@@ -97,6 +97,14 @@ RUN cd / \
     && gfortran -o prosail.exe MODULE_PRO4SAIL.f90 dataSpec_PDB.f90 main_PROSAIL.f90 LIDF.f90 dladgen.f PRO4SAIL.f90 prospect_DB.f90 tav_abs.f90 volscatt.f90 \
     && ./prosail.exe 1.5 55 2 2 0 0.009 0.009 -0.35 -0.15 1 5 0.1 30 10 0
 
+    ## build Python modules
+RUN echo "*** Installing Python3 Modules "
+RUN cd / \
+    && pip3 install --upgrade pip \
+    && python3 -m pip install numpy \
+    && python3 -m pip install scipy \
+    && python3 -m pip install matplotlib
+
 RUN cd / \
     && mkdir -p output \
     && chown prosail -R /output \
