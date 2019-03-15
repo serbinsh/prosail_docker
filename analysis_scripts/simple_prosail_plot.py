@@ -4,6 +4,8 @@
 import sys
 import os
 import csv
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -20,7 +22,7 @@ f2.close()
 
 plt.plot(x,y, label='PROSAIL-D')
 plt.xlabel('Wavelength (nm)')
-plt.ylabel('Reflectance (0-1')
+plt.ylabel('Reflectance (0-1)')
 #plt.title('Interesting Graph\nCheck it out')
 plt.legend()
 #plt.show()
