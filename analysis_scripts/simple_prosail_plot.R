@@ -1,4 +1,11 @@
-prosail <- read.table('Refl_CAN_PDB.txt', header=F)
+import os
+import sys
+
+filename_in = sys.argv[1]
+if os.path.exists(filename_in):
+    print os.path.basename(filename_in)
+
+prosail <- read.table(filename_in, header=F)
 
 # create plot
 png("PROSAIL_D_Output.png",width=4000, height=3200, res=240)

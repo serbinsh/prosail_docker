@@ -55,9 +55,7 @@ RUN apt-get update -y \
     libhdf5-serial-dev \
     autopoint \
     gsl-bin \
-    libgsl0-dev \
-    llvm \
-    clang
+    libgsl0-dev
     
     ## Install program to configure locales
 RUN dpkg-reconfigure locales && \
@@ -107,7 +105,8 @@ RUN cd / \
     && chown prosail -R /analysis_scripts \
     && chmod 775 -R /analysis_scripts \
     && cd /analysis_scripts \
-    && wget https://raw.githubusercontent.com/serbinsh/prosail_docker/master/analysis_scripts/simple_prosail_plot.R
+    && wget https://raw.githubusercontent.com/serbinsh/prosail_docker/master/analysis_scripts/simple_prosail_plot.py \
+    && chmod 775 simple_prosail_plot.py
 
 
 ### EOF
