@@ -43,6 +43,7 @@ RUN apt-get update -y \
     python-pip \
     python3 \
     python3-pip \
+    python3-tk \
     apt-utils \
     ftp \
     apt-transport-https \
@@ -56,20 +57,6 @@ RUN apt-get update -y \
     autopoint \
     gsl-bin \
     libgsl0-dev
-    
-    ## Install program to configure locales
-RUN dpkg-reconfigure locales && \
-  locale-gen C.UTF-8 && \
-    /usr/sbin/update-locale LANG=C.UTF-8
-RUN echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen && \
-      locale-gen
-   ## Set default locale for the environment
-ENV LC_ALL C.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8
-
-   ## check locales
-RUN locale -a
 
 ## Compile Expat XML parser
 RUN echo "*** Compiling Expat XML parser"
@@ -103,7 +90,7 @@ RUN cd / \
     && pip3 install --upgrade pip \
     && python3 -m pip install numpy \
     && python3 -m pip install scipy \
-    && python3 -m pip install matplotlib
+    && python3 -m pip install 'matplotlib==2.2.4'
 
 RUN cd / \
     && mkdir -p output \
