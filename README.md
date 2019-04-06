@@ -6,7 +6,12 @@ Docker hub location: https://hub.docker.com/r/serbinsh/prosail_containers
 This repo is very much a WIP
 
 
-Initial run example
+Basic forward simulation example
+
+1) Get latest docker image
+```docker pull serbinsh/prosail_containers:prosail_D_basic```
+
+2) Run a forward simulation
 
 ```Inputs and order:  N,Cab,Car,Anth,Cbrown,Cw,Cm,LIDFa,LIDFb,TypeLIDF,LAI,hspot,tts,tto,psi```
 
@@ -31,7 +36,7 @@ vi Refl_CAN_PDB.txt
  ...
  ```
  
- Create a simple plot of the output:
+ 3) Create a simple plot of the output:
  
  ```
 docker run -t -i -v ~/scratch:/output serbinsh/prosail_containers:prosail_D_basic /bin/sh -c 'cd /output/ && /analysis_scripts/./simple_prosail_plot.py Refl_CAN_PDB.txt'
