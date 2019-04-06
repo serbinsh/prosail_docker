@@ -181,6 +181,9 @@ ALLOCATE (rsoil_old(nw))
     READ(BUFFER,*) tto              ! 4SAIL observer zenith angle
     CALL GETARG(15,BUFFER)
     READ(BUFFER,*) psi              ! 4SAIL azimuth
+    CALL GETARG(16,BUFFER)
+    READ(BUFFER,*) psoil            ! Soil wetness scale factor for Hapke model (psoil=0: wet soil / psoil=1: dry soil)
+
 
         !# reset soil
         rsoil0=psoil*Rsoil1+(1-psoil)*Rsoil2
