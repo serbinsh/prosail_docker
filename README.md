@@ -16,7 +16,7 @@ Basic forward simulation example
 ```Inputs and order:  N,Cab,Car,Anth,Cbrown,Cw,Cm,LIDFa,LIDFb,TypeLIDF,LAI,hspot,tts,tto,psi,psoil```
 
 ```
-docker run -t -i -v ~/scratch:/output serbinsh/prosail_containers:prosail_D_basic /bin/sh -c 'cd /output/ && /PROSAIL_D_FORTRAN/./prosail.exe 1.5 55 2 2 0 0.009 0.009 -0.35 -0.15 1 5 0.1 30 10 0'
+docker run -t -i -v ~/scratch:/output serbinsh/prosail_containers:prosail_D_basic /bin/sh -c 'cd /output/ && /PROSAIL_D_FORTRAN/./prosail.exe 1.5 55 2 2 0 0.009 0.009 -0.35 -0.15 1 5 0.1 30 10 0 0.85'
 ```
 
 ```
