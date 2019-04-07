@@ -9,6 +9,7 @@ This repo is very much a WIP
 Basic forward simulation example
 
 1) Get latest docker image
+
 ```docker pull serbinsh/prosail_containers:prosail_D_basic```
 
 2) Run a forward simulation
